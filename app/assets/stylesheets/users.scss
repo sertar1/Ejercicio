@@ -1,0 +1,31 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "breve";
+
+html, body {
+	height:100%;
+	min-height:100%;
+}
+.fondo {
+	height: 100%;
+	width:100%;
+	background: url(dark_embroidery.png) ;
+}
+h1{
+	text-align: center;
+	color:white;
+}
+.tabla{
+	position: relative;
+	margin: 0 auto;
+	tr, td {
+		border: 3px solid black;
+		background-size: 800px 433px;
+	}
+	
+	thead {
+		font-size: 22px;
+		background-size: 80px 60px;
+	}
+}

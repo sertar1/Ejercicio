@@ -1,0 +1,7 @@
+<h1>Perfil de usuario.</h1>
+<%= @user.name %>
+<%= @user.email %>
+
+<%= flash[:notice].present? ? "#{flash[:notice]}" : "" %>
+<%= link_to "home", "/" %>
+<a href="/"> Home</a>

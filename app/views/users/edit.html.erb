@@ -1,0 +1,31 @@
+<h1>Editar usuario</h1>
+<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+<% if @user && @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Existen <%= pluralize(@user.errors.count, "error", "errores") %> en el formulario.
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<fieldset>
+	<%= f.label :name, "Nombre" %>
+	<%= f.text_field :name %>
+</fieldset>
+<fieldset>
+	<%= f.label :email, "Correo" %>
+	<%= f.text_field :email %>
+</fieldset>
+<fieldset>
+	<%= f.label :password, "Contraseña" %>
+	<%= f.password_field :password %>
+</fieldset>
+<fieldset>
+	<%= f.submit "Enviar" %>
+</fieldset>
+<% end %>

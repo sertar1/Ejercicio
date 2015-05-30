@@ -1,0 +1,29 @@
+<div class="fondo">
+	<h1>Lista usuarios</h1>
+	<%= link_to "Crear usuario", new_user_path %>
+	<table class="tabla">
+		<% if @users.count > 0 %>
+			<thead>
+				<tr>
+					<td>Nombre</td>
+					<td>Email</td>
+					<td colspan="3">Acciones</td>
+				</tr>
+			</thead>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.name %></td>
+				<td><%= user.email %></td>
+				<td><%= link_to "Ver", user_path(user) %></td>
+				<td><%= link_to "Editar", edit_user_path(user) %></td>
+				<td><%= link_to "Eliminar", user_path(user), method: :delete, data: {confirm: "¿Está seguro?"} %>
+					</td>
+			</tr>
+			<% end %>
+		<% else %>
+			<tr>
+				<td>No hay usuarios</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
